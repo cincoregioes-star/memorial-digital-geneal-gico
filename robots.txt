@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cincoregioes-star.github.io/legado-tavares-e-lima/sitemap.xml

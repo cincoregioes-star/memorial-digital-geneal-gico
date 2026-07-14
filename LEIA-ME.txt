@@ -1,0 +1,133 @@
+LEGADO TAVARES E LIMA — INSTRUÇÕES
+====================================
+
+PLATAFORMA PRONTA PARA GITHUB PAGES
+
+Arquivos principais:
+- index.html
+- style.css
+- familia.js
+- script.js
+- assets/
+- pessoas/ (páginas individuais para o Google)
+- sitemap.xml
+- robots.txt
+- manifest.webmanifest
+- service-worker.js
+
+PUBLICAÇÃO
+1. Crie um repositório chamado: legado-tavares-e-lima
+2. Envie todo o conteúdo desta pasta para a raiz do repositório.
+3. Abra Settings > Pages.
+4. Em Source, selecione Deploy from a branch.
+5. Escolha main / root e salve.
+6. Endereço previsto: https://cincoregioes-star.github.io/legado-tavares-e-lima/
+
+ATENÇÃO AO ENDEREÇO
+O sitemap.xml e o robots.txt já usam o endereço acima. Caso o nome do repositório seja diferente, substitua esse endereço nesses dois arquivos e nas páginas dentro de /pessoas.
+
+FOTOS DOS FAMILIARES
+- Os avatares provisórios estão em assets/avatars/.
+- Para manter o sistema funcionando sem editar script, substitua cada SVG por uma foto com o mesmo nome de arquivo ou altere em familia.js e script.js.
+- Recomenda-se foto quadrada, mínimo 800 x 800 px.
+
+DADOS DA FAMÍLIA
+- Todo o cadastro central está em familia.js.
+- Campos: id, slug, name, birth, birthPlace, parents, partners, children, summary e bio.
+- As páginas individuais já foram geradas com os dados enviados.
+
+FUNÇÕES IMPLEMENTADAS
+- Layout Syntropic responsivo.
+- Glassmorphism 2026.
+- Mapa de Conquista / Teia Neural usando Vis-network 10.1.0.
+- Árvore genealógica interativa e pesquisável.
+- Perfil deslizante para cada membro.
+- Página HTML pública individual para cada pessoa.
+- Pôster genealógico ampliável.
+- Linha do tempo.
+- Mapa conceitual de origens.
+- Memórias salvas no navegador e exportadas em JSON.
+- Vídeos e canais do YouTube.
+- Questão imersiva com arrastar e soltar e alternativa por toque.
+- Relógio Biológico com pausa visual e respiração guiada.
+- PWA e cache básico.
+- Sitemap e robots.txt.
+
+PRIVACIDADE
+Não publique CPF, número de documentos, endereço residencial, telefone, dados médicos ou certidões completas de pessoas vivas. Para crianças, mantenha apenas informações autorizadas pela família.
+ATUALIZAÇÃO — CELINA
+- Página individual refeita com as duas representações artísticas.
+- Biografia completa incluída.
+- Imagem realçada na árvore e no painel de perfil.
+- As legendas Porto/1868 foram removidas das imagens porque esses dados ainda não estão documentalmente confirmados.
+
+ATUALIZAÇÃO — EDİR TAVARES CABRAL
+----------------------------------
+- Cinco fotografias reais adicionadas em assets/fotos/.
+- Página pública: pessoas/edir-tavares-cabral.html
+- Link do Facebook incluído conforme fornecido pela família.
+- A URL antiga de Edir redireciona automaticamente para a nova.
+
+
+ATUALIZAÇÃO — ÁRVORE COMPLETA
+- A seção Árvore Genealógica abre agora na Visão completa.
+- Todos os 31 familiares ficam visíveis em cards organizados por ramos e gerações.
+- A Teia interativa continua disponível em um botão próprio.
+- O botão Ver tudo limpa buscas e filtros na visão completa.
+- Clique em qualquer familiar para abrir o perfil e sua página pública individual.
+
+ATUALIZAÇÃO — JOANA E JÉSSICA
+- Joana Xavier de Lima adicionada como esposa de Cezar Mario Batista de Lima a partir de 1978.
+- Jéssica Lindsey Xavier de Lima adicionada como filha de Cezar e Joana, nascida em 06/07/1990 na Mooca, São Paulo.
+- Linha do tempo, teia interativa, árvore completa, páginas individuais e sitemap atualizados.
+- O relato da mudança familiar de 1978 foi identificado como memória familiar fornecida por Carlos André.
+
+ATUALIZAÇÃO — FOTOS DA FAMÍLIA
+Foram adicionadas fotografias reais aos perfis de Joana Xavier de Lima, Jéssica Lindsey Xavier de Lima, Giulia Ferreira Lima, Adriana Cristina Tavares de Lima, Rogerio Tavares de Lima e Marcia Celina Tavares de Lima.
+As imagens de grupo foram mantidas sem recortes que pudessem atribuir incorretamente identidades.
+ATUALIZAÇÃO — VICTOR, GABRIEL E CARLOS
+- Fotografias adicionadas aos cards, árvore, painel de perfil e páginas individuais de Victor Cezar Diniz Lima, Gabriel Ferreira Lima e Carlos Andre Tavares de Lima.
+- As imagens originais também foram preservadas nas galerias individuais.
+- O retrato de Gabriel foi identificado como imagem aprimorada a partir de fotografia familiar.
+- Cache PWA atualizado para forçar o carregamento das novas imagens.
+
+ATUALIZAÇÃO — FRANCISCA, SEBASTIANA E ANTONIO
+- Foto de Francisca Maria Diniz adicionada ao card, árvore, teia neural, painel e página individual.
+- Retratos individuais de Sebastiana Batista Lima e Antonio Batista Lima adicionados ao card, árvore, teia neural, painel e páginas individuais.
+- Imagens originais preservadas nas galerias.
+- Metadados de compartilhamento e cache PWA atualizados.
+
+
+ATUALIZAÇÃO — CORREÇÃO PARA NOTEBOOK
+A árvore completa agora aparece normalmente com o navegador em 100% de zoom.
+A falha era causada pela animação de entrada aplicada a um bloco muito alto.
+Substitua todos os arquivos no GitHub e pressione Ctrl + F5 uma vez.
+
+
+ATUALIZAÇÃO — BIOGRAFIA DE CEZAR MARIO
+- Nascimento registrado em 1946, em Bom Jesus, Espírito Santo.
+- Infância rural em meio às plantações de café.
+- Carreira como caldeireiro nos estaleiros do Rio de Janeiro e no ABC Paulista.
+- Atuação posterior como serralheiro artístico na Rua da Mooca.
+- Registro da COESME — Cobertura e Estruturas Metálicas.
+- AVC em 2010, período acamado de aproximadamente cinco anos e falecimento em 2015.
+- Correção do nome Jéssica e dos anos de nascimento de Rogerio, Julio Cezar e Mauro Cezar.
+
+
+ATUALIZAÇÃO — ÁLBUM, CONTRIBUIÇÕES, MODELO E SOBRENOMES
+--------------------------------------------------------
+- Players incorporados do YouTube substituídos por capas clicáveis para eliminar o erro 153 ao abrir o site localmente.
+- Álbum completo com todas as imagens já cadastradas, identificação, responsável pelo envio e período de inclusão.
+- Espaços reservados para familiares ainda sem fotografia.
+- Formulário de contribuição que prepara um e-mail para cincoregioes@gmail.com; o guardião decide o que será publicado.
+- Seção comercial para solicitar um memorial genealógico semelhante, com formulário de orçamento por e-mail.
+- Seção Sobrenomes e Brasões com origem, significado, presença na árvore, fontes e aviso heráldico.
+- Os escudos dos sobrenomes são símbolos gráficos do memorial e não comprovam direito a brasões históricos.
+
+
+ATUALIZAÇÃO V15 — BRASÕES
+- 18 brasões recortados do painel enviado foram incluídos na seção Sobrenomes e Brasões.
+- Os cards de sobrenomes agora exibem os brasões correspondentes quando disponíveis.
+- Tavares e Lima aparecem no título principal da plataforma.
+- O painel original completo pode ser ampliado dentro do site.
+- Os símbolos são referências visuais; não comprovam automaticamente vínculo com linhagem armigerada.

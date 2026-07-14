@@ -1,0 +1,17 @@
+{
+  "name": "Legado Tavares e Lima",
+  "short_name": "Legado T&L",
+  "description": "Memorial digital e árvore genealógica da família Tavares e Lima.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#04110e",
+  "theme_color": "#071713",
+  "icons": [
+    {
+      "src": "assets/avatars/carlos-andre-tavares-lima.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
