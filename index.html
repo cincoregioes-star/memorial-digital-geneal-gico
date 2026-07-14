@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#071713" name="theme-color"/>
+<meta content="Memorial digital e árvore genealógica da família Tavares e Lima, com raízes em Portugal e histórias preservadas para futuras gerações." name="description"/>
+<meta content="Carlos Andre Tavares de Lima, família Tavares, família Lima, árvore genealógica, memorial digital, Beberibe, genealogia" name="keywords"/>
+<meta content="Carlos Andre Tavares de Lima" name="author"/>
+<meta content="Legado Tavares e Lima" property="og:title"/>
+<meta content="Memórias que atravessam gerações." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="assets/brasoes/titulo-legado-tavares-lima.webp" property="og:image"/>
+<title>Legado Tavares e Lima — Memorial Digital Genealógico</title>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="assets/avatars/carlos-andre-tavares-lima.svg" rel="icon" type="image/svg+xml"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/npm/vis-network@10.1.0/styles/vis-network.min.css" rel="stylesheet"/>
+<link href="style.css?v=15" rel="stylesheet"/>
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Legado Tavares e Lima",
+    "description":"Memorial digital e árvore genealógica da família Tavares e Lima.",
+    "url":"https://cincoregioes-star.github.io/legado-tavares-e-lima/",
+    "author":{"@type":"Person","name":"Carlos Andre Tavares de Lima"}
+  }
+  </script>
+</head>
+<body>
+<div aria-hidden="true" class="ambient ambient-a"></div>
+<div aria-hidden="true" class="ambient ambient-b"></div>
+<div aria-hidden="true" class="grain"></div>
+<header class="topbar glass" id="topo">
+<a aria-label="Voltar ao início" class="brand" href="#inicio">
+<span aria-hidden="true" class="brand-mark">LT</span>
+<span><strong>Legado</strong><small>Tavares e Lima</small></span>
+</a>
+<div class="top-actions">
+<label aria-label="Buscar familiar" class="search-mini">
+<span>⌕</span>
+<input autocomplete="off" id="globalSearch" placeholder="Buscar familiar..." type="search"/>
+</label>
+<button aria-label="Abrir Relógio Biológico" class="icon-btn" id="openClock" title="Relógio Biológico" type="button">
+<span id="liveClock">--:--</span>
+</button>
+<button aria-label="Alternar alto contraste" class="icon-btn" id="toggleContrast" title="Alto contraste" type="button">◐</button>
+</div>
+</header>
+<main>
+<section class="hero section" id="inicio">
+<div class="hero-copy reveal">
+<span class="eyebrow">Memorial digital genealógico</span>
+<div class="hero-title-lockup" aria-label="Legado Tavares e Lima">
+<img alt="Brasão Tavares" class="hero-title-crest" src="assets/brasoes/tavares.webp"/>
+<h1>Legado<br/><em>Tavares e Lima</em></h1>
+<img alt="Brasão Lima" class="hero-title-crest" src="assets/brasoes/lima.webp"/>
+</div>
+<p>Memórias que atravessam gerações. Uma casa digital para nomes, histórias, imagens, documentos e caminhos familiares.</p>
+<div class="hero-actions">
+<button class="btn primary" data-goto="mapa-conquista" type="button">Explorar a teia neural</button>
+<button class="btn secondary" data-goto="arvore" type="button">Abrir árvore genealógica</button>
+</div>
+<div aria-label="Resumo do acervo" class="hero-stats">
+<div><strong id="peopleCount">0</strong><span>pessoas registradas</span></div>
+<div><strong>7</strong><span>gerações mapeadas</span></div>
+<div><strong>c. 1850</strong><span>raiz mais antiga</span></div>
+</div>
+</div>
+<div class="hero-visual glass reveal">
+<img alt="Pôster da árvore genealógica da família Tavares e Lima" loading="eager" src="assets/poster-legado-tavares-e-lima.png"/>
+<div class="hero-visual-overlay">
+<span>Documento vivo</span>
+<button class="text-btn" id="openPoster" type="button">Ampliar pôster ↗</button>
+</div>
+</div>
+</section>
+<section class="section neural-section" id="mapa-conquista">
+<div class="section-heading reveal">
+<span class="eyebrow">Navegação sem menus</span>
+<h2>Mapa de Conquista <em>— Teia Neural</em></h2>
+<p>Cada núcleo conduz a uma parte do legado. Arraste a teia, aproxime e toque em um ponto para navegar.</p>
+</div>
+<div class="network-shell glass reveal">
+<div class="network-toolbar">
+<span class="status-dot"></span><strong>Teia ativa</strong>
+<span class="toolbar-hint">arraste • zoom • clique</span>
+<button class="tiny-btn" id="resetNeural" type="button">Recentralizar</button>
+</div>
+<div aria-label="Mapa de navegação em formato de teia neural" class="network-canvas" id="neuralNetwork"></div>
+<div class="network-fallback" hidden="" id="neuralFallback"></div>
+</div>
+</section>
+<section class="section" id="arvore">
+<div class="section-heading split reveal">
+<div>
+<span class="eyebrow">Linhagem interativa</span>
+<h2>Árvore <em>Genealógica</em></h2>
+<p>Toque em qualquer pessoa para abrir sua página de história. As fotos provisórias serão substituídas pelas imagens reais.</p>
+</div>
+<div class="tree-controls glass">
+<label><span>⌕</span><input id="treeSearch" placeholder="Nome do familiar" type="search"/></label>
+<select aria-label="Filtrar ramo familiar" id="branchFilter">
+<option value="all">Todos os ramos</option>
+<option value="materna">Raízes maternas</option>
+<option value="paterna">Raízes paternas</option>
+<option value="central">Pais</option>
+<option value="descendente">Descendentes</option>
+<option value="nova-geracao">Nova geração</option>
+</select>
+<button class="tiny-btn" id="fitTree" type="button">Ver tudo</button>
+</div>
+</div>
+<div aria-label="Escolher visualização da árvore" class="tree-view-switch glass reveal" role="tablist">
+<button aria-controls="completeTreeView" aria-selected="true" class="tree-view-btn active" id="showCompleteTree" role="tab" type="button">
+<span>Visão completa</span><strong>31 familiares</strong>
+</button>
+<button aria-controls="interactiveTreeView" aria-selected="false" class="tree-view-btn" id="showInteractiveTree" role="tab" type="button">
+<span>Teia interativa</span><strong>arrastar e ampliar</strong>
+</button>
+</div>
+<div class="complete-tree-view" id="completeTreeView">
+<div class="complete-tree-notice glass">
+<div><span class="status-dot"></span><strong>Árvore completa carregada</strong></div>
+<p>Todos os membros conhecidos aparecem abaixo. Clique em qualquer fotografia ou nome para abrir a história individual.</p>
+</div>
+<div aria-label="Árvore genealógica completa com todos os familiares" class="complete-tree-content" id="completeTreeContent"></div>
+</div>
+<div class="interactive-tree-view" hidden="" id="interactiveTreeView">
+<div class="family-network-wrap glass reveal">
+<div class="legend">
+<span><i class="materna"></i>Materna</span><span><i class="paterna"></i>Paterna</span><span><i class="foco"></i>Indivíduo foco</span><span><i class="descendente"></i>Descendentes</span>
+</div>
+<div aria-label="Árvore genealógica interativa" class="family-network" id="familyNetwork"></div>
+<div class="family-fallback" hidden="" id="familyFallback"></div>
+</div>
+</div>
+</section>
+<section class="section" id="linha-do-tempo">
+<div class="section-heading reveal">
+<span class="eyebrow">Tempo e continuidade</span>
+<h2>Linha do <em>Tempo</em></h2>
+<p>Marcos conhecidos da família. Novos acontecimentos poderão ser adicionados sem alterar a estrutura.</p>
+</div>
+<div class="timeline reveal" id="timelineList"></div>
+</section>
+<section class="section" id="origens">
+<div class="section-heading reveal">
+<span class="eyebrow">Geografia da memória</span>
+<h2>Mapa das <em>Origens</em></h2>
+<p>Uma jornada que conecta Portugal, Rio de Janeiro, Piauí, São Paulo e Ceará.</p>
+</div>
+<div class="origins-grid">
+<div aria-label="Rotas familiares conhecidas" class="route-map glass reveal">
+<svg aria-label="Mapa conceitual das localidades da família" role="img" viewbox="0 0 1000 540">
+<defs>
+<lineargradient id="routeG" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#7cf2bd"></stop><stop offset="1" stop-color="#6cb7ff"></stop></lineargradient>
+<filter id="glow"><fegaussianblur result="b" stddeviation="5"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<path class="map-land" d="M95 116c70-83 190-90 277-33 55 36 78 99 52 150-25 49-90 54-126 91-36 37-23 89-76 119-68 39-158 6-181-66-22-67 36-122 54-169 15-39-21-58 0-92z"></path>
+<path class="map-land" d="M575 75c104-44 265 2 329 109 42 70 20 143-45 172-43 20-74 10-110 50-44 49-121 80-182 36-68-49-51-130 6-173 44-33 33-68 2-99-35-35-42-77 0-95z"></path>
+<path class="route" d="M210 175 C390 80, 500 230, 700 180 S865 250, 810 350 S605 420, 505 330 S330 380, 265 300"></path>
+<g class="map-point" transform="translate(210 175)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Portugal • c. 1850</text></g>
+<g class="map-point" transform="translate(505 330)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Nova Iguaçu • RJ</text></g>
+<g class="map-point" transform="translate(700 180)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Miguel Alves • PI</text></g>
+<g class="map-point" transform="translate(810 350)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Beberibe • CE</text></g>
+<g class="map-point" transform="translate(265 300)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Mooca e Itapevi • SP</text></g>
+</svg>
+</div>
+<div class="origin-cards reveal">
+<article class="glass"><span>01</span><h3>Portugal</h3><p>Celina, nascida aproximadamente em 1850, é a raiz mais antiga atualmente conhecida.</p></article>
+<article class="glass"><span>02</span><h3>Sudeste</h3><p>Carlos viveu boa parte de sua vida na Mooca. Entre 1995 e 2002, viveu com Maria Elza em Itapevi. Gabriel nasceu na Mooca e Giulia nasceu em Itapevi. Após 2004, Carlos constituiu sua família atual com Francisca; Victor nasceu na Mooca em 2010.</p></article>
+<article class="glass"><span>03</span><h3>Nordeste</h3><p>Desde 2002, Maria Elza, Gabriel e Giulia vivem em Miguel Alves. Carlos também morou seis meses na cidade antes de retornar à Mooca. Atualmente, sua família com Francisca e Victor vive em Beberibe.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="memorias">
+<div class="section-heading split reveal">
+<div>
+<span class="eyebrow">Cápsulas do tempo</span>
+<h2>Memórias <em>Vivas</em></h2>
+<p>Registre histórias sem precisar editar o código. As contribuições ficam salvas no navegador e podem ser exportadas.</p>
+</div>
+<button class="btn secondary" id="exportMemories" type="button">Exportar contribuições</button>
+</div>
+<div class="memories-grid">
+<article class="memory-feature glass reveal">
+<span class="memory-number">01</span>
+<p class="quote">“Uma família permanece viva quando suas histórias encontram quem as escute, preserve e transmita.”</p>
+<div class="memory-meta"><strong>Propósito do memorial</strong><span>Legado Tavares e Lima</span></div>
+</article>
+<form class="memory-form glass reveal" id="memoryForm">
+<h3>Adicionar uma lembrança</h3>
+<label>Familiar<select id="memoryPerson" required=""></select></label>
+<label>Título<input id="memoryTitle" maxlength="90" placeholder="Ex.: Como era a casa da família" required=""/></label>
+<label>Relato<textarea id="memoryText" maxlength="1200" placeholder="Escreva a memória com nomes, lugares e datas conhecidas..." required=""></textarea></label>
+<button class="btn primary" type="submit">Guardar nesta cápsula</button>
+<small>Os dados ficam somente neste dispositivo até serem exportados.</small>
+</form>
+</div>
+<div class="memory-list" id="memoryList"></div>
+</section>
+<section class="section" id="videos">
+<div class="section-heading reveal">
+<span class="eyebrow">Arquivo audiovisual</span>
+<h2>Vídeos e <em>Canais</em></h2>
+<p>Conteúdos já publicados foram incorporados como parte do acervo digital.</p>
+</div>
+<div class="video-grid video-grid-links">
+<article class="video-card video-link-card glass reveal">
+<a aria-label="Assistir Registro audiovisual 1 no YouTube" class="video-cover" href="https://www.youtube.com/watch?v=4Bu_EjdnAmE" rel="noopener" target="_blank">
+<img alt="Capa do vídeo Registro audiovisual 1" loading="lazy" src="assets/poster-legado-tavares-e-lima.png"/>
+<span class="video-play">▶</span><span class="video-open-label">Assistir no YouTube</span>
+</a>
+<div><span>Árvore genealógica</span><h3>Registro audiovisual 1</h3><p>Reprodução aberta diretamente no YouTube para funcionar tanto no arquivo local quanto no site publicado.</p><a href="https://www.youtube.com/watch?v=4Bu_EjdnAmE" rel="noopener" target="_blank">Abrir vídeo ↗</a></div>
+</article>
+<article class="video-card video-link-card glass reveal">
+<a aria-label="Assistir Registro audiovisual 2 no YouTube" class="video-cover" href="https://www.youtube.com/watch?v=jG_afetxaPY" rel="noopener" target="_blank">
+<img alt="Capa do vídeo Registro audiovisual 2" loading="lazy" src="assets/poster-legado-tavares-e-lima.png"/>
+<span class="video-play">▶</span><span class="video-open-label">Assistir no YouTube</span>
+</a>
+<div><span>Árvore genealógica</span><h3>Registro audiovisual 2</h3><p>O player incorporado foi substituído por acesso direto, eliminando o erro de configuração 153.</p><a href="https://www.youtube.com/watch?v=jG_afetxaPY" rel="noopener" target="_blank">Abrir vídeo ↗</a></div>
+</article>
+<article class="channel-card glass reveal"><span class="channel-icon">▶</span><div><span>Canal de memória local</span><h3>Cápsula do Tempo</h3><p>Vídeos de Beberibe e registros produzidos desde 2019.</p><a href="https://www.youtube.com/@Capsuladotempo-yz2qi/videos" rel="noopener" target="_blank">Visitar canal ↗</a></div></article>
+<article class="channel-card glass reveal"><span class="channel-icon">▶</span><div><span>Canal pessoal</span><h3>Maracujá Tutorial</h3><p>Conteúdos diversos associados ao perfil e à trajetória digital.</p><a href="https://www.youtube.com/@maracujatutorial.3959" rel="noopener" target="_blank">Visitar canal ↗</a></div></article>
+</div>
+</section>
+<section class="section" id="documentos">
+<div class="section-heading reveal">
+<span class="eyebrow">Museu digital</span>
+<h2>Documentos e <em>Fotografias</em></h2>
+<p>Certidões, retratos, cartas, diplomas e objetos de valor afetivo organizados em um museu digital familiar.</p>
+</div>
+<div class="archive-grid reveal">
+<button class="archive-card glass" data-archive="fotos" type="button"><span>▧</span><strong>Álbum de fotografias</strong><small>Abrir todas as fotos e espaços pendentes</small></button>
+<button class="archive-card glass" data-archive="certidoes" type="button"><span>⌑</span><strong>Certidões e registros</strong><small>Arquivos com proteção de dados</small></button>
+<button class="archive-card glass" data-archive="cartas" type="button"><span>✎</span><strong>Cartas e relatos</strong><small>Textos, áudios e transcrições</small></button>
+<button class="archive-card glass" data-archive="objetos" type="button"><span>◇</span><strong>Objetos de memória</strong><small>História de peças familiares</small></button>
+</div>
+</section>
+<section class="section" id="album-familia">
+<div class="section-heading split reveal">
+<div>
+<span class="eyebrow">Acervo visual da família</span>
+<h2>Álbum de <em>Fotografias</em></h2>
+<p>Todas as imagens já reunidas no memorial aparecem abaixo, com identificação, responsável pelo envio e período de inclusão. Os familiares sem fotografia recebem um espaço reservado.</p>
+</div>
+<div class="album-summary glass"><strong id="albumPhotoCount">0</strong><span>imagens no acervo</span><small id="albumPendingCount">0 espaços aguardando foto</small></div>
+</div>
+<div class="album-toolbar glass reveal">
+<label><span>⌕</span><input id="albumSearch" placeholder="Buscar pessoa no álbum" type="search"/></label>
+<select aria-label="Filtrar fotografias" id="albumFilter"><option value="all">Todas as imagens</option><option value="real">Somente fotografias</option><option value="artistic">Representações artísticas</option><option value="pending">Espaços sem foto</option></select>
+<button class="tiny-btn" id="clearAlbumFilter" type="button">Limpar</button>
+</div>
+<div class="family-album-grid" id="familyAlbumGrid"></div>
+</section><section class="section" id="sobrenomes">
+<div class="section-heading reveal">
+<span class="eyebrow">Herança onomástica e heráldica</span>
+<h2>Sobrenomes e <em>Brasões</em></h2>
+<p>Origem, significado, presença na árvore e situação da pesquisa heráldica de cada sobrenome familiar.</p>
+</div>
+<article class="heraldry-warning glass reveal">
+<img alt="Composição dos brasões Tavares e Lima" class="historical-crest" loading="lazy" src="assets/brasoes/tavares-de-lima.webp"/>
+<div><h3>Brasão não pertence automaticamente a todo portador do sobrenome</h3><p>Os escudos desta seção são símbolos visuais do memorial. Quando existem armas históricas associadas a uma linhagem com o mesmo sobrenome, isso é informado como associação histórica — não como prova de que este ramo familiar possui direito ou descendência daquele brasão.</p><div class="source-row"><a href="https://digitarq.arquivos.pt/documentDetails/d50550d0c2fb4d798499305adb4cf441" rel="noopener" target="_blank">Livro do Armeiro-Mor — Arquivo Nacional da Torre do Tombo ↗</a><a href="https://www.familysearch.org/en/blog/family-crest-coat-of-arms" rel="noopener" target="_blank">Orientação sobre brasões e linhagens ↗</a></div></div>
+</article>
+<div class="crest-showcase glass reveal">
+<div class="crest-showcase-copy">
+<span class="eyebrow">Acervo heráldico do memorial</span>
+<h3>Galeria completa de brasões</h3>
+<p>Os brasões abaixo foram recortados da composição familiar enviada para o projeto. Eles funcionam como símbolos visuais e referências históricas ou artísticas, sem comprovar automaticamente direito heráldico.</p>
+<button class="tiny-btn" id="openCrestPanel" type="button">Ver painel original completo</button>
+</div>
+<img alt="Painel completo de brasões das famílias da árvore genealógica" class="crest-showcase-panel" loading="lazy" src="assets/brasoes/galeria-completa.webp"/>
+</div>
+<div aria-label="Galeria individual de brasões familiares" class="crest-grid" id="crestGrid"></div>
+<div class="surname-toolbar glass reveal"><button class="surname-filter active" data-surname-filter="all" type="button">Todos</button><button class="surname-filter" data-surname-filter="Raízes maternas" type="button">Maternos</button><button class="surname-filter" data-surname-filter="Raízes paternas" type="button">Paternos</button><button class="surname-filter" data-surname-filter="current" type="button">Ramos atuais</button></div>
+<div class="surname-grid" id="surnameGrid"></div>
+</section><section class="section" id="contribuir">
+<div class="section-heading split reveal">
+<div>
+<span class="eyebrow">Memorial colaborativo com curadoria</span>
+<h2>Enviar uma <em>Contribuição</em></h2>
+<p>Familiares e pessoas que possuam informações, fotos ou documentos podem enviar uma proposta. Carlos receberá o material e decidirá o que será publicado.</p>
+</div>
+<a class="btn secondary" href="mailto:cincoregioes@gmail.com?subject=Contribui%C3%A7%C3%A3o%20para%20o%20Legado%20Tavares%20e%20Lima">Escrever diretamente para o e-mail</a>
+</div>
+<div class="contribution-layout">
+<form class="contribution-form glass reveal" id="contributionForm">
+<h3>Preparar mensagem para análise</h3>
+<div class="form-two"><label>Seu nome<input id="contribName" maxlength="100" placeholder="Nome completo" required=""/></label><label>Seu e-mail<input id="contribEmail" placeholder="seuemail@exemplo.com" required="" type="email"/></label></div>
+<div class="form-two"><label>Relação com a família<input id="contribRelation" maxlength="100" placeholder="Ex.: primo, neta, amigo da família"/></label><label>Pessoa relacionada<select id="contribPerson"><option value="">Informação geral</option></select></label></div>
+<label>Tipo de contribuição<select id="contribType"><option>Biografia ou lembrança</option><option>Correção de informação</option><option>Fotografia</option><option>Certidão ou documento</option><option>Vídeo ou áudio</option><option>Informação sobre sobrenome</option><option>Outro material</option></select></label>
+<label>Informação a ser analisada<textarea id="contribText" maxlength="2500" placeholder="Escreva a informação, informe nomes, datas, locais e como você tomou conhecimento..." required=""></textarea></label>
+<label>Fonte ou comprovação<input id="contribSource" maxlength="500" placeholder="Ex.: relato de minha mãe, certidão, fotografia antiga, link"/></label>
+<button class="btn primary" type="submit">Abrir e-mail para enviar</button>
+<small>O formulário abrirá seu programa de e-mail com a mensagem preenchida. Para fotos e documentos, anexe os arquivos antes de enviar.</small>
+</form>
+<aside class="curation-card glass reveal"><span class="curation-icon">✓</span><h3>Como funciona a curadoria</h3><ol><li>A contribuição chega ao e-mail <strong>cincoregioes@gmail.com</strong>.</li><li>O conteúdo é conferido com as informações já registradas.</li><li>Dados de pessoas vivas e documentos sensíveis são protegidos.</li><li>Somente o material considerado adequado é incluído na próxima versão.</li></ol><p>Ao enviar uma fotografia, informe quem aparece, data aproximada, local e quem forneceu a imagem.</p></aside>
+</div>
+</section><section class="section" id="modelo-memorial">
+<div class="model-showcase glass reveal">
+<div class="model-copy"><span class="eyebrow">Transforme a história da sua família</span><h2>Compre um modelo <em>igual a este</em></h2><p>Uma plataforma genealógica personalizada, fácil de alimentar com nomes, datas, fotografias, vídeos e biografias — entregue pronta para publicar.</p><div class="model-features"><span>✓ Árvore interativa</span><span>✓ Páginas por familiar</span><span>✓ Álbum com identificação</span><span>✓ Sobrenomes e heráldica</span><span>✓ Formulário para contribuições</span><span>✓ Publicação no GitHub Pages</span></div></div>
+<div class="model-order"><div class="model-preview"><img alt="Exemplo visual de memorial genealógico personalizado" loading="lazy" src="assets/poster-legado-tavares-e-lima.png"/><span>Seu sobrenome • suas fotos • sua história</span></div><form id="modelOrderForm"><label>Nome<input id="modelBuyerName" placeholder="Seu nome" required=""/></label><label>E-mail<input id="modelBuyerEmail" placeholder="seuemail@exemplo.com" required="" type="email"/></label><label>Tamanho aproximado da família<select id="modelFamilySize"><option>Até 20 pessoas</option><option>21 a 50 pessoas</option><option>51 a 100 pessoas</option><option>Mais de 100 pessoas</option></select></label><label>O que deseja incluir<textarea id="modelBuyerNotes" maxlength="1000" placeholder="Conte brevemente como deseja o seu memorial..."></textarea></label><button class="btn primary" type="submit">Solicitar orçamento por e-mail</button></form></div>
+</div>
+<div class="model-steps reveal"><article><strong>1</strong><h3>Preencha os dados</h3><p>Você recebe uma ficha simples com nomes, parentescos, datas e textos.</p></article><article><strong>2</strong><h3>Envie as imagens</h3><p>As fotos são organizadas por pessoa, com legendas e identificação de quem enviou.</p></article><article><strong>3</strong><h3>Receba o site pronto</h3><p>O memorial é entregue em ZIP, preparado para computador, celular e publicação.</p></article></div>
+</section><section class="section" id="desafio">
+<div class="section-heading split reveal">
+<div>
+<span class="eyebrow">Motor de aprendizado tátil</span>
+<h2>Questão <em>Imersiva</em></h2>
+<p>Arraste cada pessoa para a geração correta. No celular, toque primeiro no nome e depois no destino.</p>
+</div>
+<div class="score-pill glass"><span>Pontuação</span><strong id="quizScore">0 / 6</strong></div>
+</div>
+<div class="immersive-quiz glass reveal" id="quizBoard">
+<div class="quiz-head"><div><span>Desafio 01</span><h3>Organize a continuidade familiar</h3></div><button class="tiny-btn" id="resetQuiz" type="button">Recomeçar</button></div>
+<div class="draggable-bank" id="dragBank"></div>
+<div class="drop-zones" id="dropZones">
+<div class="drop-zone" data-generation="ancestral"><span>Raízes</span><strong>Antepassados</strong><div class="drop-content"></div></div>
+<div class="drop-zone" data-generation="central"><span>Tronco</span><strong>Geração central</strong><div class="drop-content"></div></div>
+<div class="drop-zone" data-generation="filhos"><span>Ramos</span><strong>Filhos</strong><div class="drop-content"></div></div>
+<div class="drop-zone" data-generation="netos"><span>Folhas</span><strong>Netos</strong><div class="drop-content"></div></div>
+</div>
+<p aria-live="polite" class="quiz-feedback" id="quizFeedback">Selecione ou arraste o primeiro nome.</p>
+</div>
+</section>
+<section class="section" id="relogio-biologico">
+<div class="bio-clock-panel glass reveal">
+<div aria-hidden="true" class="bio-orbit"><i></i><i></i><i></i><span>20</span></div>
+<div>
+<span class="eyebrow">Descanso consciente</span>
+<h2>Relógio <em>Biológico</em></h2>
+<p>O site acompanha o tempo de exploração e propõe uma pausa visual orgânica. O fundo desacelera, a luz suaviza e uma respiração guiada ajuda a descansar os olhos.</p>
+<div class="clock-settings">
+<label>Intervalo<select id="breakInterval"><option value="10">10 minutos</option><option selected="" value="20">20 minutos</option><option value="30">30 minutos</option><option value="45">45 minutos</option></select></label>
+<button class="btn primary" id="startBreakNow" type="button">Iniciar pausa agora</button>
+<span>Próxima pausa em <strong id="nextBreak">20:00</strong></span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer glass"><div><strong>Legado Tavares e Lima</strong><p>Memórias que atravessam gerações.</p></div><div><span>Guardião inicial</span><strong>Carlos Andre Tavares de Lima</strong></div><div class="footer-links"><a href="#contribuir">Enviar contribuição</a><a href="#modelo-memorial">Comprar um modelo</a><a href="mailto:cincoregioes@gmail.com">cincoregioes@gmail.com</a></div><a href="#topo">Voltar ao início ↑</a></footer>
+<aside aria-hidden="true" aria-label="História do familiar" class="profile-drawer" id="profileDrawer">
+<div class="drawer-backdrop" data-close-profile=""></div>
+<article class="profile-sheet glass" id="profileSheet">
+<button aria-label="Arraste para fechar" class="drag-handle" id="profileDragHandle" type="button"><span></span></button>
+<button aria-label="Fechar perfil" class="close-btn" data-close-profile="" type="button">×</button>
+<div id="profileContent"></div>
+</article>
+</aside>
+<dialog class="poster-modal" id="posterModal">
+<button aria-label="Fechar pôster" class="close-btn" id="closePoster" type="button">×</button>
+<img alt="Pôster ampliado da árvore genealógica" src="assets/poster-legado-tavares-e-lima.png"/>
+</dialog>
+<dialog class="notice-modal" id="noticeModal">
+<button aria-label="Fechar" class="close-btn" data-close-notice="" type="button">×</button>
+<span class="eyebrow">Arquivo preparado</span>
+<h3 id="noticeTitle">Seção em construção</h3>
+<p id="noticeText">Esta área está pronta para receber os arquivos reais da família.</p>
+</dialog>
+<dialog class="photo-modal" id="photoModal"><button aria-label="Fechar fotografia" class="close-btn" id="closePhotoModal" type="button">×</button><img alt="" id="photoModalImage" src=""/><div class="photo-modal-caption"><strong id="photoModalTitle"></strong><p id="photoModalText"></p></div></dialog><div aria-hidden="true" class="rest-overlay" id="restOverlay">
+<div aria-hidden="true" class="rest-stars"></div>
+<div class="rest-content">
+<span class="eyebrow">Pausa orgânica</span>
+<h2>Descanse os olhos</h2>
+<div class="breath-circle"><span id="breathText">Inspire</span><strong id="restCountdown">60</strong></div>
+<p>Olhe para um ponto distante, relaxe os ombros e acompanhe o ritmo.</p>
+<div><button class="btn primary" id="endRest" type="button">Concluir pausa</button><button class="btn secondary" id="snoozeRest" type="button">Lembrar em 5 min</button></div>
+</div>
+</div>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script src="familia.js?v=14"></script>
+<script src="https://cdn.jsdelivr.net/npm/vis-network@10.1.0/standalone/umd/vis-network.min.js"></script>
+<script src="sobrenomes.js?v=15"></script><script src="script.js?v=15"></script>
+</body>
+</html>
