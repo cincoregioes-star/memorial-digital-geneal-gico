@@ -17,7 +17,7 @@
 <link href="assets/avatars/carlos-andre-tavares-lima.svg" rel="icon" type="image/svg+xml"/>
 <link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
 <link href="https://cdn.jsdelivr.net/npm/vis-network@10.1.0/styles/vis-network.min.css" rel="stylesheet"/>
-<link href="style.css?v=15" rel="stylesheet"/>
+<link href="style.css?v=20" rel="stylesheet"/>
 <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -146,6 +146,55 @@
 </div>
 <div class="timeline reveal" id="timelineList"></div>
 </section>
+
+<section class="section history-section" id="historia-mundo">
+  <div class="section-heading reveal">
+    <span class="eyebrow">A família dentro do tempo</span>
+    <h2>Acontecimentos do <em>Mundo</em></h2>
+    <p>Uma linha do tempo com 21 acontecimentos entre 1850 e 2026, relacionados às gerações que viviam em cada período. As reações familiares são hipóteses cuidadosas e aparecem separadas dos dados comprovados.</p>
+  </div>
+  <div class="history-toolbar glass reveal" aria-label="Filtrar acontecimentos históricos">
+    <div class="history-filter-group">
+      <span class="history-event-count" id="historyEventCount">21 acontecimentos • 1850–2026</span>
+      <button class="history-filter active" data-history-filter="all" type="button">Todos</button>
+      <button class="history-filter" data-history-filter="xix" type="button">Século XIX</button>
+      <button class="history-filter" data-history-filter="xx" type="button">Século XX</button>
+      <button class="history-filter" data-history-filter="xxi" type="button">Século XXI</button>
+    </div>
+    <div class="history-legend">
+      <span><i class="confirmed"></i> Confirmado</span>
+      <span><i class="probable"></i> Provável</span>
+      <span><i class="possible"></i> Possível</span>
+    </div>
+  </div>
+  <div class="world-history-grid" id="worldHistoryGrid"></div>
+  <div class="history-disclaimer glass reveal">
+    <strong>Como interpretar esta seção</strong>
+    <p>O acontecimento mundial é documentado por fontes históricas. A presença de cada ancestral depende das datas conhecidas; quando faltam documentos, o site usa as classificações “provável” ou “possível”, sem transformar hipótese em fato.</p>
+  </div>
+</section>
+<section class="section discoveries-section" id="descobertas-humanas">
+  <div class="section-heading reveal">
+    <span class="eyebrow">Conhecimento que transformou vidas</span>
+    <h2>Descobertas e invenções em benefício da <em>humanidade</em></h2>
+    <p>Dez avanços que mudaram a medicina, a energia, a comunicação e os transportes. Cada cartão explica como era a vida antes, qual benefício surgiu e quais gerações da família estavam no mundo naquela época.</p>
+  </div>
+  <div class="history-toolbar glass reveal" aria-label="Filtrar descobertas e invenções">
+    <div class="history-filter-group">
+      <span class="history-event-count discovery-count" id="discoveryCount">10 descobertas • 1850–1989</span>
+      <button class="discovery-filter active" data-discovery-filter="all" type="button">Todas</button>
+      <button class="discovery-filter" data-discovery-filter="medicina" type="button">Medicina</button>
+      <button class="discovery-filter" data-discovery-filter="energia" type="button">Energia</button>
+      <button class="discovery-filter" data-discovery-filter="comunicacao" type="button">Comunicação</button>
+      <button class="discovery-filter" data-discovery-filter="transporte" type="button">Transportes</button>
+    </div>
+  </div>
+  <div class="world-history-grid discoveries-grid" id="humanDiscoveriesGrid"></div>
+  <div class="history-disclaimer discovery-disclaimer glass reveal">
+    <strong>Uma invenção raramente pertence a uma única pessoa</strong>
+    <p>Os cartões apresentam marcos reconhecidos, mas destacam que muitas descobertas resultaram do trabalho acumulado de cientistas, técnicos, pacientes, instituições e comunidades ao longo de vários anos.</p>
+  </div>
+</section>
 <section class="section" id="origens">
 <div class="section-heading reveal">
 <span class="eyebrow">Geografia da memória</span>
@@ -163,7 +212,7 @@
 <path class="map-land" d="M575 75c104-44 265 2 329 109 42 70 20 143-45 172-43 20-74 10-110 50-44 49-121 80-182 36-68-49-51-130 6-173 44-33 33-68 2-99-35-35-42-77 0-95z"></path>
 <path class="route" d="M210 175 C390 80, 500 230, 700 180 S865 250, 810 350 S605 420, 505 330 S330 380, 265 300"></path>
 <g class="map-point" transform="translate(210 175)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Portugal • c. 1850</text></g>
-<g class="map-point" transform="translate(505 330)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Nova Iguaçu • RJ</text></g>
+<g class="map-point" transform="translate(505 330)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Austin • Nova Iguaçu • RJ</text></g>
 <g class="map-point" transform="translate(700 180)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Miguel Alves • PI</text></g>
 <g class="map-point" transform="translate(810 350)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Beberibe • CE</text></g>
 <g class="map-point" transform="translate(265 300)"><circle r="16"></circle><circle r="5"></circle><text y="-28">Mooca e Itapevi • SP</text></g>
@@ -374,6 +423,6 @@
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 <script src="familia.js?v=14"></script>
 <script src="https://cdn.jsdelivr.net/npm/vis-network@10.1.0/standalone/umd/vis-network.min.js"></script>
-<script src="sobrenomes.js?v=15"></script><script src="script.js?v=15"></script>
+<script src="sobrenomes.js?v=15"></script><script src="historia.js?v=20"></script><script src="script.js?v=20"></script>
 </body>
 </html>
