@@ -726,6 +726,58 @@
     location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
+  function setHistoryCardDetails(button, open) {
+    if (!button) return;
+    const targetId = button.getAttribute('aria-controls');
+    const details = targetId ? document.getElementById(targetId) : null;
+    if (!details) return;
+    details.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+    const label = button.querySelector('span');
+    if (label) label.textContent = open ? 'Esconder detalhes' : 'Ler detalhes';
+    const icon = button.querySelector('i');
+    if (icon) icon.textContent = open ? '⌃' : '⌄';
+    button.closest('.world-history-card')?.classList.toggle('details-open', open);
+  }
+
+  function setFeatureSection(button, open) {
+    if (!button) return;
+    const targetId = button.dataset.sectionToggle;
+    const body = targetId ? document.getElementById(targetId) : null;
+    if (!body) return;
+    body.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+    const label = button.querySelector('span');
+    if (label) label.textContent = open ? 'Esconder seção' : 'Expandir seção';
+    const icon = button.querySelector('i');
+    if (icon) icon.textContent = open ? '⌃' : '⌄';
+    button.closest('.collapsible-feature-section')?.classList.toggle('section-open', open);
+  }
+
+  function initHistoryDisclosure() {
+    $$('[data-section-toggle]').forEach(button => {
+      setFeatureSection(button, false);
+      button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') !== 'true';
+        setFeatureSection(button, open);
+      });
+    });
+
+    [$('#worldHistoryGrid'), $('#humanDiscoveriesGrid')].forEach(grid => {
+      grid?.addEventListener('click', event => {
+        const button = event.target.closest('[data-card-details-toggle]');
+        if (!button) return;
+        setHistoryCardDetails(button, button.getAttribute('aria-expanded') !== 'true');
+      });
+    });
+
+    $$('[data-detail-action]').forEach(button => button.addEventListener('click', () => {
+      const grid = document.getElementById(button.dataset.detailGrid || '');
+      const open = button.dataset.detailAction === 'open';
+      grid?.querySelectorAll('[data-card-details-toggle]').forEach(toggle => setHistoryCardDetails(toggle, open));
+    }));
+  }
+
   function renderWorldHistory(filter='all') {
     const grid = $('#worldHistoryGrid');
     if (!grid) return;
@@ -735,26 +787,35 @@
       if (!Array.isArray(items) || !items.length) return '';
       return `<div class="history-family-group ${type}"><strong>${title}</strong><ul>${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>`;
     };
-    grid.innerHTML = visible.map(event => `<article class="world-history-card glass reveal visible" data-century="${esc(event.century)}">
-      <header class="world-history-head">
-        <div class="history-icon" aria-hidden="true">${esc(event.icon)}</div>
-        <div><span class="history-date">${esc(event.date)}</span><h3>${esc(event.title)}</h3><p>${esc(event.subtitle)}</p></div>
-        <strong class="history-year">${esc(event.year)}</strong>
-      </header>
-      <div class="history-fact-copy">${event.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>
-      <div class="history-family-panel">
-        <span class="eyebrow">Quem da família vivia nessa época?</span>
-        ${list(event.confirmed,'confirmed','Presença confirmada')}
-        ${list(event.probable,'probable','Presença provável')}
-        ${list(event.possible,'possible','Presença possível')}
-      </div>
-      <div class="history-reaction">
-        <strong>Como podem ter reagido ou sido afetados?</strong>
-        <p>${esc(event.familyReaction)}</p>
-      </div>
-      <div class="history-confidence"><strong>Grau de certeza:</strong> ${esc(event.confidence)}</div>
-      <a class="history-source" href="${esc(event.sourceUrl)}" target="_blank" rel="noopener">${esc(event.sourceLabel)} ↗</a>
-    </article>`).join('') || '<div class="album-empty glass">Nenhum acontecimento encontrado neste período.</div>';
+    grid.innerHTML = visible.map(event => {
+      const detailsId = `history-details-${event.id}`;
+      return `<article class="world-history-card glass reveal visible" data-century="${esc(event.century)}">
+        <header class="world-history-head">
+          <div class="history-icon" aria-hidden="true">${esc(event.icon)}</div>
+          <div><span class="history-date">${esc(event.date)}</span><h3>${esc(event.title)}</h3><p>${esc(event.subtitle)}</p></div>
+          <strong class="history-year">${esc(event.year)}</strong>
+        </header>
+        <div class="history-card-preview">
+          <span>Consulte o acontecimento, os ancestrais da época e os possíveis impactos.</span>
+          <button class="history-card-toggle" type="button" data-card-details-toggle aria-controls="${esc(detailsId)}" aria-expanded="false"><span>Ler detalhes</span><i aria-hidden="true">⌄</i></button>
+        </div>
+        <div class="history-card-details" id="${esc(detailsId)}" hidden>
+          <div class="history-fact-copy">${event.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+          <div class="history-family-panel">
+            <span class="eyebrow">Quem da família vivia nessa época?</span>
+            ${list(event.confirmed,'confirmed','Presença confirmada')}
+            ${list(event.probable,'probable','Presença provável')}
+            ${list(event.possible,'possible','Presença possível')}
+          </div>
+          <div class="history-reaction">
+            <strong>Como podem ter reagido ou sido afetados?</strong>
+            <p>${esc(event.familyReaction)}</p>
+          </div>
+          <div class="history-confidence"><strong>Grau de certeza:</strong> ${esc(event.confidence)}</div>
+          <a class="history-source" href="${esc(event.sourceUrl)}" target="_blank" rel="noopener">${esc(event.sourceLabel)} ↗</a>
+        </div>
+      </article>`;
+    }).join('') || '<div class="album-empty glass">Nenhum acontecimento encontrado neste período.</div>';
   }
 
   function initWorldHistory() {
@@ -768,7 +829,6 @@
     }));
   }
 
-
   function renderHumanDiscoveries(filter='all') {
     const grid = $('#humanDiscoveriesGrid');
     if (!grid) return;
@@ -778,30 +838,39 @@
       if (!Array.isArray(entries) || !entries.length) return '';
       return `<div class="history-family-group ${type}"><strong>${title}</strong><ul>${entries.map(entry => `<li>${esc(entry)}</li>`).join('')}</ul></div>`;
     };
-    grid.innerHTML = visible.map(item => `<article class="world-history-card discovery-card glass reveal visible" data-category="${esc(item.category)}">
-      <header class="world-history-head discovery-head">
-        <div class="history-icon" aria-hidden="true">${esc(item.icon)}</div>
-        <div><span class="history-date">${esc(item.date)}</span><h3>${esc(item.title)}</h3><p>${esc(item.subtitle)}</p><span class="discovery-category">${esc(item.categoryLabel)}</span></div>
-        <strong class="history-year">${esc(item.year)}</strong>
-      </header>
-      <div class="history-fact-copy">${item.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>
-      <div class="discovery-comparison">
-        <div class="discovery-before"><span>Antes</span><p>${esc(item.before)}</p></div>
-        <div class="discovery-benefit"><span>Benefício</span><p>${esc(item.benefit)}</p></div>
-      </div>
-      <div class="history-family-panel">
-        <span class="eyebrow">Quem da família vivia nessa época?</span>
-        ${list(item.confirmed,'confirmed','Presença confirmada')}
-        ${list(item.probable,'probable','Presença provável')}
-        ${list(item.possible,'possible','Presença possível')}
-      </div>
-      <div class="history-reaction discovery-impact">
-        <strong>Como esse avanço pode ter alcançado a família?</strong>
-        <p>${esc(item.familyImpact)}</p>
-      </div>
-      <div class="history-confidence"><strong>Grau de certeza:</strong> ${esc(item.confidence)}</div>
-      <a class="history-source" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">${esc(item.sourceLabel)} ↗</a>
-    </article>`).join('') || '<div class="album-empty glass">Nenhuma descoberta encontrada nesta categoria.</div>';
+    grid.innerHTML = visible.map(item => {
+      const detailsId = `discovery-details-${item.id}`;
+      return `<article class="world-history-card discovery-card glass reveal visible" data-category="${esc(item.category)}">
+        <header class="world-history-head discovery-head">
+          <div class="history-icon" aria-hidden="true">${esc(item.icon)}</div>
+          <div><span class="history-date">${esc(item.date)}</span><h3>${esc(item.title)}</h3><p>${esc(item.subtitle)}</p><span class="discovery-category">${esc(item.categoryLabel)}</span></div>
+          <strong class="history-year">${esc(item.year)}</strong>
+        </header>
+        <div class="history-card-preview">
+          <span>Veja como era antes, o benefício alcançado e quais gerações viviam na época.</span>
+          <button class="history-card-toggle" type="button" data-card-details-toggle aria-controls="${esc(detailsId)}" aria-expanded="false"><span>Ler detalhes</span><i aria-hidden="true">⌄</i></button>
+        </div>
+        <div class="history-card-details" id="${esc(detailsId)}" hidden>
+          <div class="history-fact-copy">${item.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+          <div class="discovery-comparison">
+            <div class="discovery-before"><span>Antes</span><p>${esc(item.before)}</p></div>
+            <div class="discovery-benefit"><span>Benefício</span><p>${esc(item.benefit)}</p></div>
+          </div>
+          <div class="history-family-panel">
+            <span class="eyebrow">Quem da família vivia nessa época?</span>
+            ${list(item.confirmed,'confirmed','Presença confirmada')}
+            ${list(item.probable,'probable','Presença provável')}
+            ${list(item.possible,'possible','Presença possível')}
+          </div>
+          <div class="history-reaction discovery-impact">
+            <strong>Como esse avanço pode ter alcançado a família?</strong>
+            <p>${esc(item.familyImpact)}</p>
+          </div>
+          <div class="history-confidence"><strong>Grau de certeza:</strong> ${esc(item.confidence)}</div>
+          <a class="history-source" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">${esc(item.sourceLabel)} ↗</a>
+        </div>
+      </article>`;
+    }).join('') || '<div class="album-empty glass">Nenhuma descoberta encontrada nesta categoria.</div>';
   }
 
   function initHumanDiscoveries() {
@@ -851,7 +920,7 @@
 
   function boot(){
     $('#peopleCount').textContent=people.length;
-    initReveal();initButtons();initPoster();initNeuralNetwork();initFamilyNetwork();initProfileDrawer();initTimeline();initWorldHistory();initHumanDiscoveries();initSearch();initMemories();initPhotoAlbum();initSurnames();initContribution();initModelOrder();initQuiz();initBioClock();initArchive();initServiceWorker();
+    initReveal();initButtons();initPoster();initNeuralNetwork();initFamilyNetwork();initProfileDrawer();initTimeline();initWorldHistory();initHumanDiscoveries();initHistoryDisclosure();initSearch();initMemories();initPhotoAlbum();initSurnames();initContribution();initModelOrder();initQuiz();initBioClock();initArchive();initServiceWorker();
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();

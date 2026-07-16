@@ -167,3 +167,14 @@ ATUALIZAÇÃO HISTÓRICA
 - Nova seção com 10 descobertas e invenções benéficas à humanidade.
 - Filtros por área: medicina, energia, comunicação e transportes.
 - Cada item relaciona as gerações familiares que viviam no período.
+
+ATUALIZAÇÃO — SEÇÕES HISTÓRICAS RECOLHÍVEIS
+
+As seções “Acontecimentos do Mundo” e “Descobertas e invenções” agora ficam compactas por padrão.
+
+Uso:
+1. Clique em “Expandir seção”.
+2. Escolha o século ou a categoria desejada.
+3. Clique em “Ler detalhes” em um cartão.
+4. Use “Abrir todos” ou “Recolher todos” quando necessário.
+5. Clique em “Esconder seção” para reduzir novamente a página.

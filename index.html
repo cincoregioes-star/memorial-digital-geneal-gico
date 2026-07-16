@@ -147,52 +147,74 @@
 <div class="timeline reveal" id="timelineList"></div>
 </section>
 
-<section class="section history-section" id="historia-mundo">
-  <div class="section-heading reveal">
+<section class="section history-section collapsible-feature-section" id="historia-mundo">
+  <div class="section-heading reveal collapsible-feature-heading">
     <span class="eyebrow">A família dentro do tempo</span>
     <h2>Acontecimentos do <em>Mundo</em></h2>
     <p>Uma linha do tempo com 21 acontecimentos entre 1850 e 2026, relacionados às gerações que viviam em cada período. As reações familiares são hipóteses cuidadosas e aparecem separadas dos dados comprovados.</p>
-  </div>
-  <div class="history-toolbar glass reveal" aria-label="Filtrar acontecimentos históricos">
-    <div class="history-filter-group">
-      <span class="history-event-count" id="historyEventCount">21 acontecimentos • 1850–2026</span>
-      <button class="history-filter active" data-history-filter="all" type="button">Todos</button>
-      <button class="history-filter" data-history-filter="xix" type="button">Século XIX</button>
-      <button class="history-filter" data-history-filter="xx" type="button">Século XX</button>
-      <button class="history-filter" data-history-filter="xxi" type="button">Século XXI</button>
-    </div>
-    <div class="history-legend">
-      <span><i class="confirmed"></i> Confirmado</span>
-      <span><i class="probable"></i> Provável</span>
-      <span><i class="possible"></i> Possível</span>
+    <div class="section-usage-card glass">
+      <div><strong>Como usar</strong><span>Abra a seção, filtre pelo século e use “Ler detalhes” para consultar o fato, os familiares vivos e os possíveis impactos.</span></div>
+      <button class="section-toggle-button" type="button" data-section-toggle="historySectionBody" aria-controls="historySectionBody" aria-expanded="false"><span>Expandir seção</span><i aria-hidden="true">⌄</i></button>
     </div>
   </div>
-  <div class="world-history-grid" id="worldHistoryGrid"></div>
-  <div class="history-disclaimer glass reveal">
-    <strong>Como interpretar esta seção</strong>
-    <p>O acontecimento mundial é documentado por fontes históricas. A presença de cada ancestral depende das datas conhecidas; quando faltam documentos, o site usa as classificações “provável” ou “possível”, sem transformar hipótese em fato.</p>
+  <div class="collapsible-feature-body" id="historySectionBody" hidden>
+    <div class="history-toolbar glass reveal" aria-label="Filtrar acontecimentos históricos">
+      <div class="history-filter-group">
+        <span class="history-event-count" id="historyEventCount">21 acontecimentos • 1850–2026</span>
+        <button class="history-filter active" data-history-filter="all" type="button">Todos</button>
+        <button class="history-filter" data-history-filter="xix" type="button">Século XIX</button>
+        <button class="history-filter" data-history-filter="xx" type="button">Século XX</button>
+        <button class="history-filter" data-history-filter="xxi" type="button">Século XXI</button>
+      </div>
+      <div class="history-toolbar-side">
+        <div class="history-legend">
+          <span><i class="confirmed"></i> Confirmado</span>
+          <span><i class="probable"></i> Provável</span>
+          <span><i class="possible"></i> Possível</span>
+        </div>
+        <div class="card-detail-actions">
+          <button type="button" data-detail-action="open" data-detail-grid="worldHistoryGrid">Abrir todos</button>
+          <button type="button" data-detail-action="close" data-detail-grid="worldHistoryGrid">Recolher todos</button>
+        </div>
+      </div>
+    </div>
+    <div class="world-history-grid" id="worldHistoryGrid"></div>
+    <div class="history-disclaimer glass reveal">
+      <strong>Como interpretar esta seção</strong>
+      <p>O acontecimento mundial é documentado por fontes históricas. A presença de cada ancestral depende das datas conhecidas; quando faltam documentos, o site usa as classificações “provável” ou “possível”, sem transformar hipótese em fato.</p>
+    </div>
   </div>
 </section>
-<section class="section discoveries-section" id="descobertas-humanas">
-  <div class="section-heading reveal">
+<section class="section discoveries-section collapsible-feature-section" id="descobertas-humanas">
+  <div class="section-heading reveal collapsible-feature-heading">
     <span class="eyebrow">Conhecimento que transformou vidas</span>
     <h2>Descobertas e invenções em benefício da <em>humanidade</em></h2>
     <p>Dez avanços que mudaram a medicina, a energia, a comunicação e os transportes. Cada cartão explica como era a vida antes, qual benefício surgiu e quais gerações da família estavam no mundo naquela época.</p>
-  </div>
-  <div class="history-toolbar glass reveal" aria-label="Filtrar descobertas e invenções">
-    <div class="history-filter-group">
-      <span class="history-event-count discovery-count" id="discoveryCount">10 descobertas • 1850–1989</span>
-      <button class="discovery-filter active" data-discovery-filter="all" type="button">Todas</button>
-      <button class="discovery-filter" data-discovery-filter="medicina" type="button">Medicina</button>
-      <button class="discovery-filter" data-discovery-filter="energia" type="button">Energia</button>
-      <button class="discovery-filter" data-discovery-filter="comunicacao" type="button">Comunicação</button>
-      <button class="discovery-filter" data-discovery-filter="transporte" type="button">Transportes</button>
+    <div class="section-usage-card glass">
+      <div><strong>Como usar</strong><span>Abra a seção, escolha uma categoria e expanda somente as descobertas que deseja ler. Também é possível abrir ou recolher todos os cartões.</span></div>
+      <button class="section-toggle-button" type="button" data-section-toggle="discoveriesSectionBody" aria-controls="discoveriesSectionBody" aria-expanded="false"><span>Expandir seção</span><i aria-hidden="true">⌄</i></button>
     </div>
   </div>
-  <div class="world-history-grid discoveries-grid" id="humanDiscoveriesGrid"></div>
-  <div class="history-disclaimer discovery-disclaimer glass reveal">
-    <strong>Uma invenção raramente pertence a uma única pessoa</strong>
-    <p>Os cartões apresentam marcos reconhecidos, mas destacam que muitas descobertas resultaram do trabalho acumulado de cientistas, técnicos, pacientes, instituições e comunidades ao longo de vários anos.</p>
+  <div class="collapsible-feature-body" id="discoveriesSectionBody" hidden>
+    <div class="history-toolbar glass reveal" aria-label="Filtrar descobertas e invenções">
+      <div class="history-filter-group">
+        <span class="history-event-count discovery-count" id="discoveryCount">10 descobertas • 1850–1989</span>
+        <button class="discovery-filter active" data-discovery-filter="all" type="button">Todas</button>
+        <button class="discovery-filter" data-discovery-filter="medicina" type="button">Medicina</button>
+        <button class="discovery-filter" data-discovery-filter="energia" type="button">Energia</button>
+        <button class="discovery-filter" data-discovery-filter="comunicacao" type="button">Comunicação</button>
+        <button class="discovery-filter" data-discovery-filter="transporte" type="button">Transportes</button>
+      </div>
+      <div class="card-detail-actions">
+        <button type="button" data-detail-action="open" data-detail-grid="humanDiscoveriesGrid">Abrir todos</button>
+        <button type="button" data-detail-action="close" data-detail-grid="humanDiscoveriesGrid">Recolher todos</button>
+      </div>
+    </div>
+    <div class="world-history-grid discoveries-grid" id="humanDiscoveriesGrid"></div>
+    <div class="history-disclaimer discovery-disclaimer glass reveal">
+      <strong>Uma invenção raramente pertence a uma única pessoa</strong>
+      <p>Os cartões apresentam marcos reconhecidos, mas destacam que muitas descobertas resultaram do trabalho acumulado de cientistas, técnicos, pacientes, instituições e comunidades ao longo de vários anos.</p>
+    </div>
   </div>
 </section>
 <section class="section" id="origens">
@@ -423,6 +445,6 @@
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 <script src="familia.js?v=14"></script>
 <script src="https://cdn.jsdelivr.net/npm/vis-network@10.1.0/standalone/umd/vis-network.min.js"></script>
-<script src="sobrenomes.js?v=15"></script><script src="historia.js?v=20"></script><script src="script.js?v=20"></script>
+<script src="sobrenomes.js?v=15"></script><script src="historia.js?v=21"></script><script src="script.js?v=21"></script>
 </body>
 </html>
