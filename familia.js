@@ -369,15 +369,15 @@ window.FAMILIA = [
       "cezar-mario-batista-lima"
     ],
     "children": [
+      "mauro-cezar",
       "marcia-celina-tavares-lima",
       "adriana-cristina-tavares-lima",
-      "carlos-andre-tavares-lima",
-      "rogerio-tavares-lima",
       "julio-cezar",
-      "mauro-cezar"
+      "carlos-andre-tavares-lima",
+      "rogerio-tavares-lima"
     ],
-    "summary": "Mãe de Carlos André Tavares de Lima e elo central da linhagem Cabral Tavares.",
-    "bio": "Edir Tavares Cabral é filha de Argeu Cabral Tavares e Edith da Encarnação Tavares. Constituiu família com Cezar Mario Batista de Lima e teve seis filhos: Marcia Celina, Adriana Cristina, Carlos André, Rogerio, Julio Cezar e Mauro Cezar.\n\nSegundo o relato familiar preservado neste memorial, após a separação do casal em 1978, Cezar mudou-se com os filhos para São Paulo e Edir permaneceu em Belford Roxo, Rio de Janeiro.\n\nSeu memorial reúne fotografias de diferentes fases da vida e permanece aberto para receber datas, locais, relatos, documentos, vídeos e lembranças fornecidas pela família.",
+    "summary": "Mãe de seis filhos com Cezar Mario e elo central da linhagem Cabral Tavares.",
+    "bio": "Edir Tavares Cabral é filha de Argeu Cabral Tavares e Edith da Encarnação Tavares. Com Cezar Mario Batista de Lima, teve seis filhos, nesta ordem: Mauro Cezar (1969), Marcia Celina (1970), Adriana Cristina (1972), Julio Cezar (1973), Carlos André (1975) e Rogerio Tavares (1976). Mauro foi o primogênito e Julio foi o quarto filho.\n\nMauro nasceu morto em 1969, quando a família morava na Estrada do Tinguazinho, em Austin, Nova Iguaçu. Segundo o relato familiar, naquele período havia pouca experiência no atendimento aos partos e não existiam maternidades próximas. Julio nasceu em 1973 e faleceu ainda bebê, depois de adoecer com meningite e permanecer aproximadamente seis meses internado.\n\nApós a separação do casal, em 1978, Cezar mudou-se com os filhos para São Paulo e Edir permaneceu em Belford Roxo, Rio de Janeiro. Seu memorial reúne fotografias e relatos de diferentes fases da vida e permanece aberto para receber documentos, áudios e novas lembranças da família.",
     "photo": "assets/fotos/edir-tavares-cabral-retrato-antigo.webp",
     "gallery": [
       "assets/fotos/edir-tavares-cabral-familia.webp",
@@ -410,16 +410,16 @@ window.FAMILIA = [
       "joana-xavier-lima"
     ],
     "children": [
+      "mauro-cezar",
       "marcia-celina-tavares-lima",
       "adriana-cristina-tavares-lima",
+      "julio-cezar",
       "carlos-andre-tavares-lima",
       "rogerio-tavares-lima",
-      "julio-cezar",
-      "mauro-cezar",
       "jessiva-lindsey-xavier-lima"
     ],
-    "summary": "Caldeireiro, serralheiro artístico, fundador da COESME e pai de sete filhos.",
-    "bio": "Cezar Mario Batista de Lima nasceu em 1946, na zona rural de Bom Jesus, Espírito Santo, em uma região marcada pelas plantações de café. Ainda jovem, deixou o campo e seguiu para o Rio de Janeiro em busca de trabalho e novas oportunidades.\n\nNo Rio de Janeiro, construiu sua trajetória profissional na caldeiraria. Tornou-se um profissional experiente e trabalhou nos estaleiros fluminenses, onde o domínio do metal, das estruturas e da fabricação industrial exigia precisão, força e responsabilidade.\n\nEm 1978, mudou-se para a cidade de São Paulo com os filhos. Continuou trabalhando como caldeireiro no ABC Paulista e em outras regiões da capital. Depois dos 40 anos, iniciou uma nova fase profissional como serralheiro artístico. Montou sua própria serralheria na casa da família, na Rua da Mooca, e tornou-se um profissional respeitado, à frente da COESME — Cobertura e Estruturas Metálicas.\n\nCezar era lembrado como um homem sábio, carismático e evangélico. Em 2010, sofreu um acidente vascular cerebral (AVC) e permaneceu acamado durante aproximadamente cinco anos. Faleceu em 2015, deixando uma história de trabalho, fé, conhecimento profissional e muitas saudades entre familiares, amigos e pessoas que conviveram com ele.",
+    "summary": "Caldeireiro, serralheiro artístico, fundador da COESME e pai de sete filhos; Mauro Cezar foi seu primogênito.",
+    "bio": "Cezar Mario Batista de Lima nasceu em 1946, na zona rural de Bom Jesus, Espírito Santo, em uma região marcada pelas plantações de café. Ainda jovem, deixou o campo e seguiu para o Rio de Janeiro, onde construiu sua trajetória profissional como caldeireiro nos estaleiros fluminenses.\n\nCom Edir Tavares Cabral, teve seis filhos, nesta ordem: Mauro Cezar (1969), Marcia Celina (1970), Adriana Cristina (1972), Julio Cezar (1973), Carlos André (1975) e Rogerio Tavares (1976). Mauro foi o primogênito, nasceu morto em 1969 quando a família vivia na Estrada do Tinguazinho, em Austin, Nova Iguaçu. Julio foi o quarto filho, nasceu em 1973 e faleceu ainda bebê após adoecer com meningite e permanecer cerca de seis meses hospitalizado. Mais tarde, com Joana Xavier de Lima, Cezar teve Jéssica Lindsey Xavier de Lima.\n\nEm 1978, mudou-se para São Paulo com os filhos e continuou trabalhando como caldeireiro no ABC Paulista e em outras regiões da capital. Depois dos 40 anos, tornou-se serralheiro artístico, montou sua oficina na Rua da Mooca e ficou à frente da COESME — Cobertura e Estruturas Metálicas.\n\nCezar era lembrado como um homem sábio, carismático e evangélico. Em 2010, sofreu um acidente vascular cerebral e permaneceu acamado durante aproximadamente cinco anos. Faleceu em 2015, deixando uma história de trabalho, fé, conhecimento profissional e muitas saudades.",
     "photo": "assets/fotos/cezar-mario-retrato.webp",
     "gallery": [
       "assets/fotos/cezar-mario-com-primo.webp",
@@ -473,8 +473,8 @@ window.FAMILIA = [
     ],
     "partners": [],
     "children": [],
-    "summary": "Irmã de Carlos André Tavares de Lima.",
-    "bio": "Marcia Celina Tavares de Lima nasceu em 1970. É filha de Cezar Mario Batista de Lima e Edir Tavares Cabral. Uma fotografia de grupo de seu acervo familiar já integra esta página. Sua história continuará sendo ampliada com documentos, datas e relatos da família.",
+    "summary": "Segunda filha de Cezar Mario e Edir, nascida em 1970.",
+    "bio": "Marcia Celina Tavares de Lima nasceu em 1970. É a segunda filha de Cezar Mario Batista de Lima e Edir Tavares Cabral, depois do primogênito Mauro Cezar. Uma fotografia de grupo de seu acervo familiar já integra esta página. Sua história continuará sendo ampliada com documentos, datas e relatos da família.",
     "photo": "assets/fotos/marcia-celina-tavares-lima.webp",
     "gallery": [
       "assets/fotos/marcia-celina-tavares-lima-original.webp"
@@ -487,7 +487,7 @@ window.FAMILIA = [
     "name": "Adriana Cristina Tavares de Lima",
     "short": "Adriana Cristina",
     "gender": "F",
-    "birth": "1973",
+    "birth": "1972",
     "birthPlace": "",
     "death": "",
     "branch": "descendente",
@@ -498,8 +498,8 @@ window.FAMILIA = [
     ],
     "partners": [],
     "children": [],
-    "summary": "Irmã de Carlos André Tavares de Lima.",
-    "bio": "Adriana Cristina Tavares de Lima nasceu em 1973. É filha de Cezar Mario Batista de Lima e Edir Tavares Cabral. Seu retrato já integra este memorial, que permanece aberto para receber novas memórias, documentos, datas e acontecimentos de sua trajetória.",
+    "summary": "Terceira filha de Cezar Mario e Edir, nascida em 1972.",
+    "bio": "Adriana Cristina Tavares de Lima nasceu em 1972. É a terceira filha de Cezar Mario Batista de Lima e Edir Tavares Cabral, depois de Mauro Cezar e Marcia Celina. Seu retrato já integra este memorial, que permanece aberto para receber novas memórias, documentos, datas e acontecimentos de sua trajetória.",
     "photo": "assets/fotos/adriana-cristina-tavares-lima.webp",
     "gallery": [
       "assets/fotos/adriana-cristina-tavares-lima-original.webp"
@@ -513,7 +513,7 @@ window.FAMILIA = [
     "short": "Carlos Andre",
     "gender": "M",
     "birth": "29/10/1975",
-    "birthPlace": "Nova Iguaçu, Rio de Janeiro",
+    "birthPlace": "Estrada do Tinguazinho, Austin, Nova Iguaçu, RJ",
     "death": "",
     "branch": "foco",
     "generation": 5,
@@ -530,13 +530,14 @@ window.FAMILIA = [
       "giulia-ferreira-lima",
       "victor-cezar-diniz-lima"
     ],
-    "summary": "Guardião inicial do memorial, companheiro de Francisca e pai de Gabriel, Giulia e Victor.",
-    "bio": "Carlos Andre Tavares de Lima nasceu em 29 de outubro de 1975, em Nova Iguaçu, Rio de Janeiro, e viveu boa parte de sua vida no bairro da Mooca, em São Paulo. Entre 1995 e 2002, viveu com Maria Elza Silva Ferreira em Itapevi, São Paulo. Dessa união anterior nasceram Gabriel Ferreira Lima, em 18 de novembro de 2000, na Mooca, e Giulia Ferreira Lima, em 25 de setembro de 2002, em Itapevi. Em 2002, Maria Elza, Gabriel e Giulia passaram a viver em Miguel Alves, Piauí. Carlos também morou cerca de seis meses nessa cidade e depois retornou à Mooca. Após 2004, constituiu sua família atual com Francisca Maria Diniz. O casal teve Victor Cezar Diniz Lima, nascido em 25 de setembro de 2010, na Mooca. Atualmente, Carlos, Francisca e Victor vivem juntos em Beberibe, Ceará. Esta plataforma nasce do propósito de preservar memórias, documentos, vídeos e a árvore genealógica para as futuras gerações.",
+    "summary": "Quinto filho de Cezar Mario e Edir, guardião inicial do memorial, nascido em casa em Austin em 1975.",
+    "bio": "Carlos Andre Tavares de Lima nasceu em 29 de outubro de 1975, em casa, na Estrada do Tinguazinho, em Austin, Nova Iguaçu, Rio de Janeiro. O parto foi realizado por sua avó paterna, Sebastiana Batista Lima, mãe de Cezar Mario. Quando a parteira chegou à residência, Carlos já havia nascido.\n\nCarlos viveu boa parte da vida no bairro da Mooca, em São Paulo. Entre 1995 e 2002, viveu com Maria Elza Silva Ferreira em Itapevi. Dessa união nasceram Gabriel Ferreira Lima, em 2000, e Giulia Ferreira Lima, em 2002. Depois, Maria Elza e os filhos passaram a viver em Miguel Alves, Piauí.\n\nApós 2004, Carlos constituiu sua família atual com Francisca Maria Diniz. O casal teve Victor Cezar Diniz Lima, nascido em 2010, e atualmente vive em Beberibe, Ceará. Esta plataforma nasceu do propósito de preservar memórias, documentos, relatos e a árvore genealógica para as futuras gerações.",
     "photo": "assets/fotos/carlos-andre-tavares-lima.webp",
     "gallery": [
       "assets/fotos/carlos-andre-tavares-lima-original.webp"
     ],
-    "imageNote": "Fotografia real do acervo pessoal de Carlos André Tavares de Lima."
+    "imageNote": "Fotografia real do acervo pessoal de Carlos André Tavares de Lima.",
+    "researchNotes": "Relato do nascimento atualizado em julho de 2026 com base nas informações transmitidas pela tia Nilda, irmã de Cezar Mario."
   },
   {
     "id": "rogerio-tavares-lima",
@@ -544,7 +545,7 @@ window.FAMILIA = [
     "name": "Rogerio Tavares de Lima",
     "short": "Rogerio Tavares",
     "gender": "M",
-    "birth": "1973",
+    "birth": "1976",
     "birthPlace": "",
     "death": "",
     "branch": "descendente",
@@ -555,8 +556,8 @@ window.FAMILIA = [
     ],
     "partners": [],
     "children": [],
-    "summary": "Irmão de Carlos André Tavares de Lima.",
-    "bio": "Rogerio Tavares de Lima nasceu em 1973. É filho de Cezar Mario Batista de Lima e Edir Tavares Cabral. Uma fotografia de seu acervo familiar foi adicionada ao memorial, que continuará sendo ampliado com relatos, documentos e outras lembranças.",
+    "summary": "Sexto filho de Cezar Mario e Edir, nascido em 1976.",
+    "bio": "Rogerio Tavares de Lima nasceu em 1976. É o sexto filho de Cezar Mario Batista de Lima e Edir Tavares Cabral, depois de Carlos André. Uma fotografia de seu acervo familiar foi adicionada ao memorial, que continuará sendo ampliado com relatos, documentos e outras lembranças.",
     "photo": "assets/fotos/rogerio-tavares-lima.webp",
     "gallery": [
       "assets/fotos/rogerio-tavares-lima-original.webp"
@@ -569,9 +570,9 @@ window.FAMILIA = [
     "name": "Julio Cezar",
     "short": "Julio Cezar",
     "gender": "M",
-    "birth": "1969",
-    "birthPlace": "",
-    "death": "falecido ainda bebê, com 6 meses ou menos",
+    "birth": "1973",
+    "birthPlace": "Rio de Janeiro (local exato em pesquisa)",
+    "death": "Faleceu após cerca de seis meses de internação",
     "branch": "memoria",
     "generation": 5,
     "parents": [
@@ -580,13 +581,14 @@ window.FAMILIA = [
     ],
     "partners": [],
     "children": [],
-    "summary": "Filho de Cezar Mario e Edir, falecido ainda bebê em 1969.",
-    "bio": "Julio Cezar foi o primeiro dos irmãos cuja vida, embora muito breve, deixou marca afetiva na história da família. Nascido em 1969, viveu apenas alguns meses, sendo lembrado como um bebê amado e acolhido com esperança. Seu nome continua presente na árvore genealógica como sinal de respeito e memória.\n\nMesmo sem ter tido tempo para construir uma trajetória longa, Julio faz parte da identidade familiar tanto quanto os demais irmãos. Sua existência reforça a importância de registrar todos os membros da família, inclusive aqueles que partiram ainda no começo da vida. No memorial, ele ocupa um espaço de ternura e lembrança.\n\nA imagem usada para representá-lo é artística e simbólica, criada para dar rosto a essa memória preservada pela família. Seu registro ajuda a honrar uma vida curta, porém significativa no coração dos que vieram depois. Este texto é uma homenagem fictícia inspirada no relato familiar.",
+    "summary": "Quarto filho de Cezar Mario e Edir; nasceu em 1973 e faleceu ainda bebê após meningite e longa internação.",
+    "bio": "Julio Cezar foi o quarto filho de Cezar Mario Batista de Lima e Edir Tavares Cabral. Nasceu em 1973 e foi acolhido com carinho pelos pais e irmãos, fazendo parte de uma família que ainda vivia no estado do Rio de Janeiro. O local exato de seu nascimento permanece em pesquisa.\n\nQuando tinha aproximadamente cinco meses, Julio passou mal e recebeu diagnóstico de meningite. Permaneceu hospitalizado durante cerca de seis meses, período em que a família acompanhou sua luta e enfrentou a incerteza provocada pela doença. Após essa longa internação, faleceu no hospital.\n\nSua breve trajetória permaneceu viva na memória familiar e agora ocupa um lugar próprio no memorial genealógico. O retrato utilizado é uma representação artística, criada para homenageá-lo e preservar sua presença entre os filhos de Cezar e Edir.",
     "photo": "assets/fotos/julio-cezar-artistic.webp",
     "gallery": [
       "assets/fotos/julio-cezar-artistic.webp"
     ],
-    "imageNote": "Representação artística em preto e branco, criada para ilustrar a memória familiar com base na linhagem e nos relatos preservados pela família."
+    "imageNote": "Representação artística em preto e branco, criada para ilustrar a memória familiar com base na linhagem e nos relatos preservados pela família.",
+    "researchNotes": "Informações atualizadas em julho de 2026 a partir de relato familiar transmitido pela tia Nilda, irmã de Cezar Mario."
   },
   {
     "id": "mauro-cezar",
@@ -594,9 +596,9 @@ window.FAMILIA = [
     "name": "Mauro Cezar",
     "short": "Mauro Cezar",
     "gender": "M",
-    "birth": "1972",
-    "birthPlace": "",
-    "death": "falecido ainda bebê, com 6 meses ou menos",
+    "birth": "1969",
+    "birthPlace": "Estrada do Tinguazinho, Austin, Nova Iguaçu, RJ",
+    "death": "Natimorto",
     "branch": "memoria",
     "generation": 5,
     "parents": [
@@ -605,13 +607,14 @@ window.FAMILIA = [
     ],
     "partners": [],
     "children": [],
-    "summary": "Filho de Cezar Mario e Edir, falecido ainda bebê em 1972.",
-    "bio": "Mauro Cezar nasceu em 1972 e, assim como Julio Cezar, faleceu ainda bebê, com poucos meses de vida. Mesmo em sua breve passagem, é lembrado como parte essencial da história familiar e do vínculo entre pais e irmãos. Seu nome permanece na árvore como gesto de amor, reconhecimento e permanência.\n\nNa reconstrução afetiva do memorial, Mauro representa a delicadeza das vidas breves que nunca devem ser esquecidas. Sua lembrança foi preservada entre os relatos familiares e ajuda a contar a história completa da família, sem apagar ausências nem dores. Registrar Mauro é também um modo de cuidar da memória coletiva.\n\nO retrato utilizado em seu perfil é uma representação artística, criada para simbolizar essa lembrança com respeito e sensibilidade. Sua presença no site reafirma que cada vida tem valor e merece ser lembrada. Esta biografia é uma construção fictícia baseada na memória transmitida pela família.",
+    "summary": "Primogênito de Cezar Mario e Edir, nasceu morto em 1969 quando a família vivia em Austin, Nova Iguaçu.",
+    "bio": "Mauro Cezar foi o primeiro filho de Cezar Mario Batista de Lima e Edir Tavares Cabral. Nasceu morto em 1969, quando a família morava na Estrada do Tinguazinho, em Austin, Nova Iguaçu, no Rio de Janeiro. Por ser o primogênito, ocupa o primeiro lugar na ordem dos seis filhos do casal.\n\nSegundo o relato familiar, naquela época havia pouca experiência disponível para acompanhar partos e não existiam maternidades próximas da residência. A família associa essas dificuldades ao desfecho do parto, informação registrada como memória oral e não como conclusão médica documental.\n\nMesmo sem ter vivido após o nascimento, Mauro integra plenamente a história da família e permanece lembrado como o primeiro filho de Cezar e Edir. Seu retrato é uma representação artística criada para preservar sua memória com respeito e sensibilidade.",
     "photo": "assets/fotos/mauro-cezar-artistic.webp",
     "gallery": [
       "assets/fotos/mauro-cezar-artistic.webp"
     ],
-    "imageNote": "Representação artística em preto e branco, criada para ilustrar a memória familiar com base na linhagem e nos relatos preservados pela família."
+    "imageNote": "Representação artística em preto e branco, criada para ilustrar a memória familiar com base na linhagem e nos relatos preservados pela família.",
+    "researchNotes": "Informações atualizadas em julho de 2026 a partir de relato familiar transmitido pela tia Nilda, irmã de Cezar Mario."
   },
   {
     "id": "jessiva-lindsey-xavier-lima",

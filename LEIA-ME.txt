@@ -131,3 +131,39 @@ ATUALIZAÇÃO V15 — BRASÕES
 - Tavares e Lima aparecem no título principal da plataforma.
 - O painel original completo pode ser ampliado dentro do site.
 - Os símbolos são referências visuais; não comprovam automaticamente vínculo com linhagem armigerada.
+
+
+ATUALIZAÇÃO 16/07/2026
+- Mauro Cezar registrado como primogênito e natimorto.
+- Julio Cezar corrigido como quarto filho, nascido em 1973, com histórico de meningite e internação.
+- Nascimento de Carlos corrigido para a residência da Estrada do Tinguazinho, em Austin, com parto realizado por Sebastiana.
+- Fonte: relato familiar transmitido pela tia Nilda.
+
+
+ATUALIZAÇÃO — ORDEM DOS FILHOS DE CEZAR E EDIR
+Mauro Cezar (1969), Marcia Celina (1970), Adriana Cristina (1972), Julio Cezar (1973), Carlos André (1975) e Rogerio Tavares (1976).
+
+NOVA SEÇÃO — ACONTECIMENTOS DO MUNDO
+-----------------------------------
+A seção “Acontecimentos do Mundo” relaciona fatos históricos às gerações familiares.
+Os eventos ficam no arquivo historia.js, que pode receber novos registros sem alterar o HTML.
+
+Cada acontecimento possui:
+- três parágrafos históricos;
+- familiares confirmados, prováveis e possíveis;
+- reconstrução de como a família pode ter reagido;
+- aviso sobre o grau de certeza;
+- fonte histórica externa.
+
+IMPORTANTE: reações e efeitos sobre a família devem ser identificados como reconstruções prováveis quando não houver depoimento ou documento que os comprove.
+
+
+ATUALIZAÇÃO — HISTÓRIA MUNDIAL
+A seção Acontecimentos do Mundo agora possui 20 eventos, de 1859 a 2026, com três parágrafos históricos, familiares que provavelmente viviam no período, hipótese de reação ou impacto, grau de certeza e fonte.
+
+
+ATUALIZAÇÃO HISTÓRICA
+- 21 acontecimentos históricos entre 1850 e 2026.
+- Nova seção com 10 descobertas e invenções benéficas à humanidade.
+- Filtros por área: medicina, energia, comunicação e transportes.
+- Cada item relaciona as gerações familiares que viviam no período.

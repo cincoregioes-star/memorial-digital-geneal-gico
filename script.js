@@ -104,9 +104,11 @@
     { id:'n13', label:'Álbum de\nFotografias', target:'album-familia', size:25, group:'media' },
     { id:'n14', label:'Sobrenomes e\nBrasões', target:'sobrenomes', size:25, group:'learning' },
     { id:'n15', label:'Enviar\nContribuição', target:'contribuir', size:24, group:'rest' },
-    { id:'n16', label:'Modelo para\noutra família', target:'modelo-memorial', size:24, group:'future' }
+    { id:'n16', label:'Modelo para\noutra família', target:'modelo-memorial', size:24, group:'future' },
+    { id:'n17', label:'Família e\nHistória Mundial', target:'historia-mundo', size:27, group:'learning' },
+    { id:'n18', label:'Descobertas que\nMudaram a Vida', target:'descobertas-humanas', size:27, group:'future' }
   ];
-  const neuralLinks = [['n0','n1'],['n0','n2'],['n0','n3'],['n0','n4'],['n0','n8'],['n1','n10'],['n1','n11'],['n1','n12'],['n4','n5'],['n4','n6'],['n4','n9'],['n4','n7'],['n7','n8'],['n2','n3'],['n5','n6'],['n10','n9'],['n11','n9'],['n9','n12'],['n6','n13'],['n3','n14'],['n4','n15'],['n0','n16'],['n13','n15'],['n14','n16']];
+  const neuralLinks = [['n0','n1'],['n0','n2'],['n0','n3'],['n0','n4'],['n0','n8'],['n1','n10'],['n1','n11'],['n1','n12'],['n4','n5'],['n4','n6'],['n4','n9'],['n4','n7'],['n7','n8'],['n2','n3'],['n5','n6'],['n10','n9'],['n11','n9'],['n9','n12'],['n6','n13'],['n3','n14'],['n4','n15'],['n0','n16'],['n13','n15'],['n14','n16'],['n2','n17'],['n0','n17'],['n17','n3'],['n17','n18'],['n0','n18'],['n18','n4']];
 
   function neuralFallback() {
     const fallback = $('#neuralFallback');
@@ -237,16 +239,16 @@
       </section>
 
       <section class="lineage-panel central" data-tree-section>
-        <header class="lineage-header"><div><span>Primeira união</span><h3>Cezar Mario e Edir</h3></div><p>O casal teve seis filhos. Todos aparecem abaixo, inclusive Julio Cezar e Mauro Cezar, falecidos ainda bebês.</p></header>
+        <header class="lineage-header"><div><span>Primeira união</span><h3>Cezar Mario e Edir</h3></div><p>Em ordem: Mauro (1969), Marcia (1970), Adriana (1972), Julio (1973), Carlos (1975) e Rogerio (1976).</p></header>
         <div class="central-couple">${pairCards('cezar-mario-batista-lima','edir-tavares-lima','central','central')}</div>
         <span class="family-arrow" style="margin:12px auto">↓</span>
         <div class="siblings-grid">
+          ${treeCard('mauro-cezar','memoria','Primogênito • Memória')}
           ${treeCard('marcia-celina-tavares-lima')}
           ${treeCard('adriana-cristina-tavares-lima')}
+          ${treeCard('julio-cezar','memoria','4º filho • Memória')}
           ${treeCard('carlos-andre-tavares-lima','foco','Indivíduo foco')}
           ${treeCard('rogerio-tavares-lima')}
-          ${treeCard('julio-cezar','memoria','Memória')}
-          ${treeCard('mauro-cezar','memoria','Memória')}
         </div>
       </section>
 
@@ -459,7 +461,12 @@
       ['c. 1850','Celina em Portugal','A raiz materna mais antiga conhecida nasce em Portugal.'],
       ['1946','Nascimento de Cezar Mario','Cezar Mario Batista de Lima nasce na zona rural de Bom Jesus, Espírito Santo, em meio às plantações de café.'],
       ['Juventude','Do campo aos estaleiros','Ainda jovem, Cezar deixa o Espírito Santo, muda-se para o Rio de Janeiro e constrói sua carreira como caldeireiro nos estaleiros fluminenses.'],
-      ['1975','Carlos Andre','Nascimento em Nova Iguaçu, Rio de Janeiro. Mais tarde, vive boa parte da vida na Mooca, em São Paulo.'],
+      ['1969','Mauro Cezar','Primogênito de Cezar e Edir, nasceu morto quando a família vivia na Estrada do Tinguazinho, em Austin, Nova Iguaçu.'],
+      ['1970','Marcia Celina','Segunda filha de Cezar e Edir.'],
+      ['1972','Adriana Cristina','Terceira filha de Cezar e Edir.'],
+      ['1973','Julio Cezar','Quarto filho de Cezar e Edir. Aos cinco meses, adoeceu com meningite e faleceu após cerca de seis meses de internação hospitalar.'],
+      ['1975','Nascimento de Carlos em Austin','Quinto filho de Cezar e Edir. Carlos nasce em casa, na Estrada do Tinguazinho, em Austin, Nova Iguaçu. Sua avó Sebastiana realizou o parto antes da chegada da parteira.'],
+      ['1976','Rogerio Tavares','Sexto filho de Cezar e Edir.'],
       ['1978','Mudança de Cezar para São Paulo','Cezar muda-se com os filhos para a capital paulista, continua trabalhando como caldeireiro no ABC Paulista e posteriormente constitui família com Joana Xavier de Lima.'],
       ['Após os 40','Serralheria artística e COESME','Cezar passa a atuar como serralheiro artístico, monta sua oficina na Rua da Mooca e torna-se proprietário da COESME — Cobertura e Estruturas Metálicas.'],
       ['1978','Cezar e Joana em São Paulo','Segundo a memória familiar, após a separação de Edir, Cezar casou-se com Joana Xavier de Lima e passou a viver em São Paulo com os filhos. Edir permaneceu em Belford Roxo, Rio de Janeiro.'],
@@ -719,6 +726,95 @@
     location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
+  function renderWorldHistory(filter='all') {
+    const grid = $('#worldHistoryGrid');
+    if (!grid) return;
+    const events = Array.isArray(window.HISTORIA_MUNDIAL) ? window.HISTORIA_MUNDIAL : [];
+    const visible = events.filter(event => filter === 'all' || event.century === filter).sort((a,b) => Number(a.year) - Number(b.year));
+    const list = (items, type, title) => {
+      if (!Array.isArray(items) || !items.length) return '';
+      return `<div class="history-family-group ${type}"><strong>${title}</strong><ul>${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul></div>`;
+    };
+    grid.innerHTML = visible.map(event => `<article class="world-history-card glass reveal visible" data-century="${esc(event.century)}">
+      <header class="world-history-head">
+        <div class="history-icon" aria-hidden="true">${esc(event.icon)}</div>
+        <div><span class="history-date">${esc(event.date)}</span><h3>${esc(event.title)}</h3><p>${esc(event.subtitle)}</p></div>
+        <strong class="history-year">${esc(event.year)}</strong>
+      </header>
+      <div class="history-fact-copy">${event.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+      <div class="history-family-panel">
+        <span class="eyebrow">Quem da família vivia nessa época?</span>
+        ${list(event.confirmed,'confirmed','Presença confirmada')}
+        ${list(event.probable,'probable','Presença provável')}
+        ${list(event.possible,'possible','Presença possível')}
+      </div>
+      <div class="history-reaction">
+        <strong>Como podem ter reagido ou sido afetados?</strong>
+        <p>${esc(event.familyReaction)}</p>
+      </div>
+      <div class="history-confidence"><strong>Grau de certeza:</strong> ${esc(event.confidence)}</div>
+      <a class="history-source" href="${esc(event.sourceUrl)}" target="_blank" rel="noopener">${esc(event.sourceLabel)} ↗</a>
+    </article>`).join('') || '<div class="album-empty glass">Nenhum acontecimento encontrado neste período.</div>';
+  }
+
+  function initWorldHistory() {
+    if (!$('#worldHistoryGrid')) return;
+    const events = Array.isArray(window.HISTORIA_MUNDIAL) ? window.HISTORIA_MUNDIAL : [];
+    if ($('#historyEventCount')) $('#historyEventCount').textContent = `${events.length} acontecimentos • 1850–2026`;
+    renderWorldHistory();
+    $$('.history-filter').forEach(btn => btn.addEventListener('click', () => {
+      $$('.history-filter').forEach(item => item.classList.toggle('active', item === btn));
+      renderWorldHistory(btn.dataset.historyFilter || 'all');
+    }));
+  }
+
+
+  function renderHumanDiscoveries(filter='all') {
+    const grid = $('#humanDiscoveriesGrid');
+    if (!grid) return;
+    const items = Array.isArray(window.DESCOBERTAS_HUMANAS) ? window.DESCOBERTAS_HUMANAS : [];
+    const visible = items.filter(item => filter === 'all' || item.category === filter).sort((a,b) => Number(a.year) - Number(b.year));
+    const list = (entries, type, title) => {
+      if (!Array.isArray(entries) || !entries.length) return '';
+      return `<div class="history-family-group ${type}"><strong>${title}</strong><ul>${entries.map(entry => `<li>${esc(entry)}</li>`).join('')}</ul></div>`;
+    };
+    grid.innerHTML = visible.map(item => `<article class="world-history-card discovery-card glass reveal visible" data-category="${esc(item.category)}">
+      <header class="world-history-head discovery-head">
+        <div class="history-icon" aria-hidden="true">${esc(item.icon)}</div>
+        <div><span class="history-date">${esc(item.date)}</span><h3>${esc(item.title)}</h3><p>${esc(item.subtitle)}</p><span class="discovery-category">${esc(item.categoryLabel)}</span></div>
+        <strong class="history-year">${esc(item.year)}</strong>
+      </header>
+      <div class="history-fact-copy">${item.paragraphs.map(p => `<p>${esc(p)}</p>`).join('')}</div>
+      <div class="discovery-comparison">
+        <div class="discovery-before"><span>Antes</span><p>${esc(item.before)}</p></div>
+        <div class="discovery-benefit"><span>Benefício</span><p>${esc(item.benefit)}</p></div>
+      </div>
+      <div class="history-family-panel">
+        <span class="eyebrow">Quem da família vivia nessa época?</span>
+        ${list(item.confirmed,'confirmed','Presença confirmada')}
+        ${list(item.probable,'probable','Presença provável')}
+        ${list(item.possible,'possible','Presença possível')}
+      </div>
+      <div class="history-reaction discovery-impact">
+        <strong>Como esse avanço pode ter alcançado a família?</strong>
+        <p>${esc(item.familyImpact)}</p>
+      </div>
+      <div class="history-confidence"><strong>Grau de certeza:</strong> ${esc(item.confidence)}</div>
+      <a class="history-source" href="${esc(item.sourceUrl)}" target="_blank" rel="noopener">${esc(item.sourceLabel)} ↗</a>
+    </article>`).join('') || '<div class="album-empty glass">Nenhuma descoberta encontrada nesta categoria.</div>';
+  }
+
+  function initHumanDiscoveries() {
+    if (!$('#humanDiscoveriesGrid')) return;
+    const items = Array.isArray(window.DESCOBERTAS_HUMANAS) ? window.DESCOBERTAS_HUMANAS : [];
+    if ($('#discoveryCount')) $('#discoveryCount').textContent = `${items.length} descobertas • 1850–1989`;
+    renderHumanDiscoveries();
+    $$('.discovery-filter').forEach(btn => btn.addEventListener('click', () => {
+      $$('.discovery-filter').forEach(item => item.classList.toggle('active', item === btn));
+      renderHumanDiscoveries(btn.dataset.discoveryFilter || 'all');
+    }));
+  }
+
   function initContribution() {
     if (!$('#contributionForm')) return;
     $('#contribPerson').innerHTML += people.map(p => `<option value="${esc(p.name)}">${esc(p.name)}</option>`).join('');
@@ -755,7 +851,7 @@
 
   function boot(){
     $('#peopleCount').textContent=people.length;
-    initReveal();initButtons();initPoster();initNeuralNetwork();initFamilyNetwork();initProfileDrawer();initTimeline();initSearch();initMemories();initPhotoAlbum();initSurnames();initContribution();initModelOrder();initQuiz();initBioClock();initArchive();initServiceWorker();
+    initReveal();initButtons();initPoster();initNeuralNetwork();initFamilyNetwork();initProfileDrawer();initTimeline();initWorldHistory();initHumanDiscoveries();initSearch();initMemories();initPhotoAlbum();initSurnames();initContribution();initModelOrder();initQuiz();initBioClock();initArchive();initServiceWorker();
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
